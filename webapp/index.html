@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MINES ABYZ</title>
+    <link rel="stylesheet" href="mines.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <h1 class="game-title">MINES ABYZ</h1>
+            <div class="loading-text">Загрузка игры...</div>
+        </div>
+    </div>
+
+    <!-- Анимированные элементы фона -->
+    <div class="bg-elements">
+        <div class="planet planet1"></div>
+        <div class="planet planet2"></div>
+        <div class="meteor meteor1"></div>
+        <div class="meteor meteor2"></div>
+        <div class="space-station"></div>
+        <div class="star-field"></div>
+    </div>
+
+    <!-- Модальное окно результатов -->
+    <div id="resultModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="result-title"></h2>
+            <p id="result-message"></p>
+            <button id="playAgainBtn" class="btn btn-primary">Играть снова</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно сброса -->
+    <div id="resetPopup" class="popup hidden">
+        <div class="popup-content">
+            <p id="popup-content"></p>
+            <div class="popup-buttons">
+                <button id="confirmReset">Да</button>
+                <button id="cancelReset">Нет</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Главный контейнер -->
+    <div class="container">
+        <h1 class="game-title">
+            MINES ABYZ
+            <div class="title-glow"></div>
+        </h1>
+        
+        <div class="game-container">
+            <div class="flex justify-center align-middle">
+                <div class="cells-board-wrapper">
+                    <div class="cells-board">
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_5450.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_11641.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_18337.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_24493.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_31201.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_37357.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_44065.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_50221.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_56929.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_63085.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_69793.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_75949.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_82645.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_89353.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_95509.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_102217.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_108373.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_115081.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_121237.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_127381.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_134077.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_140221.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_146917.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_153061.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+
+                        <button type="button" class="cell">
+                            <img width="56" height="56" src="output_svgs/image_159757.svg">
+                            <div class="cell-glow"></div>
+                        </button>
+                        <div class="cells-board-mask">
+                            <div class="animated-highlight"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-container">
+                <div class="status-bar">
+                    <div class="select-traps status-bar__select-traps">
+                        <button class="select-traps__prev-arrow-btn" type="button" id="prev_preset_btn">
+                            <svg class="select-traps__arrow-icon select-traps__arrow-icon_prev" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.92616 20.0002L10.7906 12.082L12.8584 10.0001L10.7906 7.91821L2.92616 0L0.858398 2.0819L8.72287 10.0001L0.858398 17.9183L2.92616 20.0002Z"></path>
+                            </svg>
+                        </button>
+                        <div class="select-traps__content">
+                            <span class="select-traps__traps_amount" id="trapsAmount">1</span>
+                            <span class="select-traps__title">мин</span>
+                        </div>
+                        <button class="select-traps__next-arrow-btn" type="button" id="next_preset_btn">
+                            <svg class="select-traps__arrow-icon" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.92616 20.0002L10.7906 12.082L12.8584 10.0001L10.7906 7.91821L2.92616 0L0.858398 2.0819L8.72287 10.0001L0.858398 17.9183L2.92616 20.0002Z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="signal-help">
+                        <button id="safeSignalBtn" class="btn btn-secondary full-width">
+                            <span>ПОЛУЧИТЬ СИГНАЛ</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-info">
+            <div class="bot-info" id="botName"></div>
+            <div class="stats-info">
+                <div class="stat">
+                    <span class="stat-label">Мины</span>
+                    <span class="stat-value" id="minesLeft">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Очки</span>
+                    <span class="stat-value" id="scoreDisplay">0</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

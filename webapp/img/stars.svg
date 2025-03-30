@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Звезда</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="starGradient">
+            <stop stop-color="#FFEA00" offset="0%"></stop>
+            <stop stop-color="#FFB700" offset="100%"></stop>
+        </linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+            <feFlood flood-color="#FFEA00" flood-opacity="0.5" result="glowColor"/>
+            <feComposite in="glowColor" in2="coloredBlur" operator="in" result="softGlow"/>
+            <feMerge>
+                <feMergeNode in="softGlow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M20,1.5 L25.1601,13.1738 L37.8372,14.4894 L28.3016,23.3262 L30.9577,35.8606 L20,29.5 L9.04235,35.8606 L11.6984,23.3262 L2.16282,14.4894 L14.8399,13.1738 L20,1.5 Z" 
+              fill="url(#starGradient)" 
+              filter="url(#glow)"
+              transform-origin="center"
+              id="starPath">
+        </path>
+    </g>
+    <animate 
+        xlink:href="#starPath"
+        attributeName="transform"
+        attributeType="XML"
+        type="rotate"
+        from="0 20 20"
+        to="360 20 20"
+        dur="10s"
+        repeatCount="indefinite"/>
+</svg>
